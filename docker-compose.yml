@@ -1,0 +1,36 @@
+version: '2'
+services:
+  mariadb:
+    image: 'bitnami/mariadb:latest'
+    environment:
+      - MARIADB_USER=bn_suitecrm
+      - MARIADB_DATABASE=bitnami_suitecrm
+      - ALLOW_EMPTY_PASSWORD=yes
+    volumes:
+      - 'mariadb_data:/bitnami'
+  suitecrm:
+    image: 'bitnami/suitecrm:latest'
+    environment:
+      - SUITECRM_USERNAME=admin
+      - SUITECRM_PASSWORD=abc123456
+      - SUITECRM_EMAIL=nguyentrisinh0810@gmail.com
+      - SUITECRM_LASTNAME=Admin
+      # - SUITECRM_HOST=
+      - SUITECRM_HTTP_TIMEOUT=200
+      - MARIADB_HOST=mariadb
+      - MARIADB_PORT_NUMBER=3306
+      - SUITECRM_DATABASE_USER=bn_suitecrm
+      - SUITECRM_DATABASE_NAME=bitnami_suitecrm
+      - ALLOW_EMPTY_PASSWORD=yes
+    ports:
+      - '1080:80'
+      - '443:443'
+    volumes:
+      - 'suitecrm_data:/bitnami'
+    depends_on:
+      - mariadb
+volumes:
+  mariadb_data:
+    driver: local
+  suitecrm_data:
+    driver: local
