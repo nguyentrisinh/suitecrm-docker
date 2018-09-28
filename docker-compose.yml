@@ -23,8 +23,8 @@ services:
       - SUITECRM_DATABASE_NAME=bitnami_suitecrm
       - ALLOW_EMPTY_PASSWORD=yes
     ports:
-      - '1080:80'
-      - '443:443'
+      - '5109:80'
+      - '5110:443'
     volumes:
       - 'suitecrm_data:/bitnami'
     depends_on:
