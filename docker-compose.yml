@@ -22,6 +22,10 @@ services:
       - SUITECRM_DATABASE_USER=bn_suitecrm
       - SUITECRM_DATABASE_NAME=bitnami_suitecrm
       - ALLOW_EMPTY_PASSWORD=yes
+      - name: SUITECRM_HTTP_TIMEOUT
+        value: "3600"
+      - name: NAMI_DEBUG
+        value: "--log-level trace"
     ports:
       - '5109:80'
       - '5110:443'
