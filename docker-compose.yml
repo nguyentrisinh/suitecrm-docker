@@ -27,8 +27,8 @@ services:
       - name: NAMI_DEBUG
         value: "--log-level trace"
     ports:
-      - '5109:80'
-      - '5110:443'
+      - '5110:80'
+      - '5111:443'
     volumes:
       - 'suitecrm_data:/bitnami'
     depends_on:
