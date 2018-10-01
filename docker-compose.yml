@@ -2,6 +2,7 @@ version: '2'
 services:
   mariadb:
     image: 'bitnami/mariadb:latest'
+    restart: always
     environment:
       - MARIADB_USER=bn_suitecrm
       - MARIADB_DATABASE=bitnami_suitecrm
@@ -10,6 +11,7 @@ services:
       - 'mariadb_data:/bitnami'
   suitecrm:
     image: 'bitnami/suitecrm:latest'
+    restart: always
     environment:
       - SUITECRM_USERNAME=admin
       - SUITECRM_PASSWORD=abc123456
