@@ -22,7 +22,7 @@ services:
       - SUITECRM_DATABASE_USER=bn_suitecrm
       - SUITECRM_DATABASE_NAME=bitnami_suitecrm
       - ALLOW_EMPTY_PASSWORD=yes
-      - SUITECRM_HTTP_TIMEOUT=3600
+      # - SUITECRM_HTTP_TIMEOUT=3600
     ports:
       - '5110:80'
       - '5111:443'
